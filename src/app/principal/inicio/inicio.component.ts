@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EquipoService } from 'src/app/services/equipo.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private equipoService: EquipoService) { }
 
   ngOnInit(): void {
+    this.traerEquipos()
+  }
+
+  traerEquipos(){
+    this.equipoService.obtenerEquipos().subscribe(equipos =>{
+      console.log(equipos)
+    })
   }
 
 }
