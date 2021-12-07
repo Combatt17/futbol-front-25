@@ -1,0 +1,18 @@
+<app-nav></app-nav> <!-- Div dentro del directorio shared-->
+<div class="container mt-5 col-5 fondo">
+    <h1>Crear nuevo equipo</h1>
+    <form [formGroup]="equipoForm" (ngSubmit)="agregar()">
+        <div class="mb-3">
+            <label  class="form-label">ID</label>
+            <input type="text" formControlName="id" placeholder="Ingrese el ID" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Nombre</label>
+            <input type="text" formControlName="nombre" placeholder="Ingrese el nombre del equipo" class="form-control">
+        </div>
+        <div class="text-center">
+            <button class="btn-success btn">Guardar</button>
+        </div>
+    </form>
+    <br>
+</div>

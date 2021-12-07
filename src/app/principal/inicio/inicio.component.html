@@ -1,1 +1,28 @@
-<img src="../../../assets/img/foto.jpg" alt="" srcset="">
+<app-nav></app-nav>
+<div class="container mt-5 ">
+    <h1>Lista de partidos</h1>
+    <table class="table table-light">
+        <thead>
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Equipo visitante</th>
+            <th scope="col">Equipo local</th>
+            <th scope="col">Goles visitante</th>
+            <th scope="col">Goles local</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of partidos">
+          <tr>
+            <td>{{item.fecha}}</td>
+            <td>{{item.usuario.nombre}}</td>
+            <td>{{item.local.nombre}}</td>
+            <td>{{item.visitante.nombre}}</td>
+            <td>{{item.golesvisitante}}</td>
+            <td>{{item.goleslocal}}</td>
+          </tr>
+        
+    
+        </tbody>
+      </table>
+</div>

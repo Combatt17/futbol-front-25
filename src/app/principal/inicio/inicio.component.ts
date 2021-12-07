@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EquipoService } from 'src/app/services/equipo.service';
+import { Partidos } from 'src/app/models/partidos.model';
+import { PartidosService } from 'src/app/services/partidos.service';
 
 @Component({
   selector: 'app-inicio',
@@ -8,15 +9,18 @@ import { EquipoService } from 'src/app/services/equipo.service';
 })
 export class InicioComponent implements OnInit {
 
-  constructor(private equipoService: EquipoService) { }
+  partidos: Partidos[] = [];
+
+  constructor(private partidoService: PartidosService) { }
 
   ngOnInit(): void {
-    this.traerEquipos()
+    this.traerpartidos()
   }
 
-  traerEquipos(){
-    this.equipoService.obtenerEquipos().subscribe(equipos =>{
-      console.log(equipos)
+  traerpartidos(){
+    this.partidoService.obtenerPartidos().subscribe((partidos:any) =>{
+      console.log(partidos)
+      this.partidos=partidos;
     })
   }
 

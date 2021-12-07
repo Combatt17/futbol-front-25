@@ -9,13 +9,21 @@ import { AppComponent } from './app.component';
 import { EntrarComponent } from './usuario/entrar/entrar.component';
 import { RegistrarComponent } from './usuario/registrar/registrar.component';
 import { InicioComponent } from './principal/inicio/inicio.component';
+import { NavComponent } from './shared/nav/nav.component';
+import { CrearPartidoComponent } from './principal/crear-partido/crear-partido.component';
+import { CrearEquipoComponent } from './principal/crear-equipo/crear-equipo.component';
+import { ListarEquiposComponent } from './principal/listar-equipos/listar-equipos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EntrarComponent,
     RegistrarComponent,
-    InicioComponent
+    InicioComponent,
+    NavComponent,
+    CrearPartidoComponent,
+    CrearEquipoComponent,
+    ListarEquiposComponent
   ],
   imports: [
     BrowserModule,

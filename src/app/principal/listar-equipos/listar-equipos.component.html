@@ -1,0 +1,19 @@
+<app-nav></app-nav>
+<div class="container mt-5 ">
+    <h1>Lista de equipos</h1>
+    <table class="table table-light">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of equipos">
+          <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.nombre}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>

@@ -1,5 +1,8 @@
-<div class="container mt-5 col-7">
-    <h1>Inicio de sesión</h1>
+<div class="container fondo mt-5 col-4">
+    <div class="text-center">
+        <h1>Inicio de sesión</h1>
+
+    </div>
     <form [formGroup]="loginForm" (ngSubmit)="entrar()">
         <div class="mb-3">
             <label class="form-label">Usuario</label>
@@ -10,9 +13,12 @@
             <label  class="form-label">Contraseña</label>
             <input type="password" formControlName="password" class="form-control">
         </div>
-        <button class="btn btn-success" type="submit">Ingresar</button>
+        <div class="text-center">
+            <button class="btn btn-success" type="submit">Ingresar</button>
+        </div>
     </form>
-    <div class="container mt-5 text-center">
+    <div class="container mt-5 text-center ">
         <a routerLink="registrar">Crear un usuario</a>
     </div>
+    <br>
 </div>

@@ -5,17 +5,17 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class EquipoService {
- 
+export class PartidosService {
+
   baseURL= environment.baseURL;
 
-  constructor(private http: HttpClient) { }
 
+  constructor(private http: HttpClient) { }
   /**
    * Obtiene el valor del token que se encuentra almacenado dentro del localStorage,
    * si el localStorage no contiene el valor buscado se devuelve un string vacio 
    */
-  getToken(){
+   getToken(){
     return localStorage.getItem("token") || '';
   }
 
@@ -25,17 +25,14 @@ export class EquipoService {
   get headers(){
     return {headers: {"Authorization": this.getToken()} }
   }
+  
 
-  /**
-   * Se debe enviar por la cabecera de la petición el token
-   */
-  obtenerEquipos(){
-    return this.http.get(`${this.baseURL}/api/equipos`, this.headers)
+  obtenerPartidos(){
+    return this.http.get(`${this.baseURL}/api/partidos`,this.headers)
   }
 
-  añadirEquipo(data:any){
-    return this.http.post(`${this.baseURL}/api/equipos`,data, this.headers)
+  agregarPartido(data: any){
+    return this.http.post(`${this.baseURL}/api/partidos`,data,this.headers)
   }
-
 
 }

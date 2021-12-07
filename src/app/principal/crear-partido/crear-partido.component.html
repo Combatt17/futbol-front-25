@@ -1,0 +1,36 @@
+<app-nav></app-nav>
+<div class="container mt-3 col-5 fondo mb-5">
+    <h1>Crear nuevo partido</h1>
+    <form [formGroup]="partidoForm" (ngSubmit)="agregar()">
+        <div class="mb-3">
+            <label  class="form-label">Fecha</label>
+            <input type="date" placeholder="Ingrese" formControlName="fecha" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Equipo local</label>
+            <select class="form-control" formControlName="local">
+                <option *ngFor="let item of equipos" value="{{item.id}}">{{item.nombre}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Equipo visitante</label>
+            <select class="form-control" formControlName="visitante">
+                <option *ngFor="let item of equipos" value="{{item.id}}">{{item.nombre}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Goles local</label>
+            <input type="number" formControlName="goleslocal" placeholder="Ingrese" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label  class="form-label">Goles visitante</label>
+            <input type="number" formControlName="golesvisitante" placeholder="Ingrese" class="form-control">
+        </div>
+        <div class="text-center">
+            <button class="btn-success btn">Guardar</button>
+        </div>
+    </form>
+    <br>
+</div>
+
